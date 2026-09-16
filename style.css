@@ -318,40 +318,53 @@ transition-delay: 0.5s ;
     left: 70%;
 }
 @media screen and (max-width: 768px) {
-  header {
-   width: 100vw;
-   padding: 15 px 20px;
-  }
-  
-  
-  .container {
-    flex-direction: column; 
-  }
+    /* Libera o scroll vertical e evita barra horizontal */
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
 
-    .logo {
-        font-size: 1.3rem;
+    header {
+        width: 100%;
+        padding: 15px 20px;
     }
 
     header nav ul {
-        gap: 20px;
+        gap: 15px;
     }
 
     header nav ul li {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    /* Expande o container da lista para ocupar a tela toda */
+    .list {
+        width: 100%;
     }
 
     .item {
         flex-direction: column;
-        justify-content: center;
-        padding-top: 80px;
-        overflow-y: auto;
+        justify-content: flex-start;
+        padding-top: 90px;
+        position: absolute;
     }
 
+    /* Ajusta a imagem para não estourar a tela */
     .product-img {
         width: 100%;
-        height: 40%;
+        height: 35%;
     }
 
+    .product-img img {
+        max-width: 70%;
+        max-height: 100%;
+    }
+
+    /* Reorganiza o texto centralizado */
     .content {
         width: 100%;
         padding: 0 20px;
@@ -360,29 +373,38 @@ transition-delay: 0.5s ;
     }
 
     .product-name {
-        font-size: 2rem;
+        font-size: 2.2rem; /* Reduz o tamanho da fonte para não quebrar a tela */
+        line-height: 1.2;
     }
 
     .description {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         margin: 15px 0;
         max-width: 100%;
     }
 
+    /* Esconde os círculos de fundo no celular para limpar o visual */
+    .tech-circle {
+        display: none;
+    }
+
+    /* Reposiciona as setas para as laterais em cima do produto */
     .arrows {
         width: 100%;
-        top: auto;
-        bottom: 100px;
-        transform: none;
-        left: 0;
-        padding: 0 15px;
+        top: 50%;
+        padding: 0 10px;
+    }
+
+    .arrow-btn {
+        width: 40px;
+        height: 40px;
     }
 
     .indicators {
-        bottom: 20px;
+        bottom: 15px;
     }
 
     .numbers {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 }
